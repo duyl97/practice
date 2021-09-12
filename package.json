@@ -2,14 +2,19 @@
   "name": "html",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "src/main.js",
   "dependencies": {
     "express": "^4.17.1",
+    "express-handlebars": "^5.3.3",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.12"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "node-sass": "^6.0.1"
+  },
   "scripts": {
-    "start": "nodemon --inspect main.js",
+    "start": "nodemon --inspect src/main.js",
+    "watch": "node-sass --watch src/resources/scss --output src/public/css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
