@@ -10,13 +10,24 @@
     "nodemon": "^2.0.12"
   },
   "devDependencies": {
-    "node-sass": "^6.0.1"
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "node-sass": "^6.0.1",
+    "prettier": "^2.4.0"
   },
   "scripts": {
     "start": "nodemon --inspect src/main.js",
     "watch": "node-sass --watch src/resources/scss --output src/public/css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "lint-staged": {
+      "src/**/*.{js,json,scss}": "prettier --single-quote --trailing-comma all --tab-width 4 --write"
+    },
+"husky": {
+  "hooks": {
+    "pre-commit": "lint-staged"
+  }
+},
   "keywords": [],
   "author": "",
   "license": "ISC"
