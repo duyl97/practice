@@ -12,6 +12,7 @@ const db = require('./config/db');
 db.connect();
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({extended: true}));
 
 // app.use(morgan('combined'));
 
@@ -23,5 +24,4 @@ app.set('views', path.join(__dirname, 'resources', 'views'));
 
 // Routes app
 route(app);
-
 app.listen(port, (req, res) => console.log(`Server listens at http://localhost:${port}`));
